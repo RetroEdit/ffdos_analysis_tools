@@ -1,0 +1,7 @@
+Megalixir,6,7
+Emergency Exit,3,4
+White Curtain,1,1
+Blue Fang,1,1
+Hermes' Shoes,0,2
+SkipWait: 2
+SkipsAllowed: 1
