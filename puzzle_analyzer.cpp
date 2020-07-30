@@ -25,7 +25,7 @@
 #include<unordered_map>
 #include<vector>
 
-const std::string VERSION = "0.1.0";
+const std::string VERSION = "0.1.1";
 
 unsigned long ff1_rand(unsigned long rng)
 {
@@ -301,8 +301,11 @@ const int MAX_STEPS = 1000;
 // 23 * 2 - 1 = 45 ('B' presses)
 // but perfect TAS gets 77?
 // Wonder where those extra 2 come from.
-// const int START_STEPS = 0;
-const int START_STEPS = 30 + 45;
+// const int START_STEPS = 30 + 45;
+
+// However, 0 is slightly slower, but less restrictive.
+// (With game modification, certain RNG can be skipped).
+const int START_STEPS = 0;
 
 // std::tuple<unsigned long, int>
 unsigned long findScrambleSeed(const int* goal)
@@ -495,7 +498,7 @@ int main()
 		getline(std::cin, line);
 		choice = line.empty() ? '0' : line[0];
 
-		if (choice == 'e')
+		if (choice == 'q')
 		{
 			break;
 		}
