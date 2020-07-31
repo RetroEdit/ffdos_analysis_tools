@@ -25,7 +25,7 @@
 #include<unordered_map>
 #include<vector>
 
-const std::string VERSION = "0.1.1";
+const std::string VERSION = "0.1.2";
 
 unsigned long ff1_rand(unsigned long rng)
 {
@@ -485,7 +485,7 @@ int main()
 	std::cout << "Prize goals loaded.\n\n";
 
 	std::cout << "Each number corresponds to an action:\n";
-	std::cout << "e - Exit\n";
+	std::cout << "q - Quit\n";
 	// std::cout << "a - Analyze a seed.\n";
 	std::cout << "f - Find scramble seed\n";
 	std::cout << "p - Predict puzzles/prizes\n";
@@ -538,10 +538,8 @@ int main()
 				getline(std::cin, line);
 				rng = std::stoul(line, nullptr, 0);
 
-				// FIXME: Temporarily disabling
-				// std::cout << "\nHow many puzzles forward would you like to look? ";
-				// getline(std::cin, line);
-				line = "0";
+				std::cout << "\nHow many puzzles forward would you like to look? ";
+				getline(std::cin, line);
 				numPuzzles = std::stoi(line, nullptr, 0);
 			}
 			catch(std::invalid_argument)
